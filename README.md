@@ -5,12 +5,14 @@ A modern, clean portfolio website inspired by [Mobbin](https://mobbin.com/)'s de
 ## Features
 
 ### 🎨 Design
+
 - **Clean, minimal aesthetic** inspired by Mobbin
 - **Responsive design** that works on all devices
 - **Smooth animations** and micro-interactions
 - **Professional typography** using Inter font family
 
 ### 🚀 Functionality
+
 - **Filterable project showcase** with categories
 - **Interactive project modals** with detailed case studies
 - **Smooth scrolling navigation**
@@ -18,6 +20,7 @@ A modern, clean portfolio website inspired by [Mobbin](https://mobbin.com/)'s de
 - **Accessibility-focused** keyboard navigation
 
 ### 📱 Sections
+
 1. **Hero Introduction** - Name, title, and value proposition
 2. **Project Showcase** - Filterable grid of work samples
 3. **About Section** - Design philosophy and process
@@ -47,42 +50,48 @@ portfolio/
 ## Customization Guide
 
 ### Personal Information
+
 Update the following sections in `index.html`:
+
 - Hero section (name, title, description)
 - About section (philosophy, process, skills)
 - Contact section (email, social links)
 
 ### Projects
+
 Edit the `projects` array in `js/script.js`:
+
 ```javascript
 const projects = [
-    {
-        id: 1,
-        title: "Your Project Title",
-        description: "Brief project description",
-        image: "path/to/your/image.jpg",
-        tags: ["UI Design", "UX Research"],
-        category: "ui-design", // ui-design, ux-flow, prototype, web-dev
-        details: {
-            overview: "Detailed project overview",
-            challenge: "What problems you solved",
-            solution: "How you solved them",
-            tools: ["Figma", "Adobe XD"],
-            duration: "Project timeline",
-            role: "Your role in the project",
-            features: ["Feature 1", "Feature 2"]
-        }
-    }
+  {
+    id: 1,
+    title: "Your Project Title",
+    description: "Brief project description",
+    image: "path/to/your/image.jpg",
+    tags: ["UI Design", "UX Research"],
+    category: "ui-design", // ui-design, ux-flow, prototype, web-dev
+    details: {
+      overview: "Detailed project overview",
+      challenge: "What problems you solved",
+      solution: "How you solved them",
+      tools: ["Figma", "Adobe XD"],
+      duration: "Project timeline",
+      role: "Your role in the project",
+      features: ["Feature 1", "Feature 2"],
+    },
+  },
 ];
 ```
 
 ### Styling
+
 Customize colors and design in `css/style.css`:
+
 ```css
 :root {
   --primary-color: #000000;
-  --accent-color: #0066FF;
-  --background-color: #FFFFFF;
+  --accent-color: #0066ff;
+  --background-color: #ffffff;
   /* Add your brand colors here */
 }
 ```
