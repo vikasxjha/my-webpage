@@ -1000,6 +1000,20 @@ function hideLoading(element) {
   element.classList.remove("loading");
 }
 
+// Hero text animation enhancements
+function initHeroAnimations() {
+  // Remove typing caret after animation completes
+  setTimeout(() => {
+    const typingElement = document.querySelector(".typing-animation");
+    if (typingElement) {
+      typingElement.classList.add("typing-complete");
+    }
+  }, 3000); // 2s typing + 0.5s delay + 0.5s buffer
+}
+
+// Initialize hero animations when DOM is loaded
+document.addEventListener("DOMContentLoaded", initHeroAnimations);
+
 // Export functions for potential testing
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
