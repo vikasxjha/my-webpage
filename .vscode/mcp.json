@@ -1,0 +1,44 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/vikasjha/selftaughtprojects9"
+      ],
+      "env": {}
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "BSAm-H9rd9AyMm4oC_7jjYJ439RdV-G"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sqlite",
+        "--db-path",
+        "/Users/vikasjha/selftaughtprojects9/database.db"
+      ],
+      "env": {}
+    },
+    "perplexity": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-perplexity"],
+      "env": {
+        "PERPLEXITY_API_KEY": "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"
+      }
+    }
+  }
+}
