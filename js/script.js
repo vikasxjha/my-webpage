@@ -146,12 +146,20 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const modal = document.getElementById('projectModal');
 const modalBody = document.getElementById('modalBody');
 const modalClose = document.getElementById('modalClose');
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const themeTransition = document.getElementById('themeTransition');
+const sunIcon = document.getElementById('sunIcon');
+const moonIcon = document.getElementById('moonIcon');
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     // Add loading animation
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
+    
+    // Initialize dark mode first
+    initializeDarkMode();
     
     // Initialize components
     renderProjects(projects);
@@ -180,6 +188,103 @@ function preloadImages() {
         const img = new Image();
         img.src = url;
     });
+}
+
+// Dark Mode Functionality
+function initializeDarkMode() {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    setTheme(initialTheme, false); // false = no animation on initial load
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light', true);
+        }
+    });
+}
+
+function setTheme(theme, animate = true) {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute('data-theme');
+    
+    // Don't animate if theme is the same
+    if (currentTheme === theme && animate) return;
+    
+    if (animate) {
+        // Add transition overlay
+        themeTransition.classList.add('active');
+        
+        // Add rotation animation to icon
+        themeIcon.classList.add('rotating');
+        
+        setTimeout(() => {
+            applyThemeChanges(theme);
+        }, 150);
+        
+        setTimeout(() => {
+            themeTransition.classList.remove('active');
+            themeIcon.classList.remove('rotating');
+        }, 300);
+    } else {
+        applyThemeChanges(theme);
+    }
+}
+
+function applyThemeChanges(theme) {
+    const root = document.documentElement;
+    
+    // Set theme attribute
+    root.setAttribute('data-theme', theme);
+    
+    // Update icons and tooltip
+    if (theme === 'dark') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+        themeToggle.setAttribute('data-tooltip', 'Switch to light mode');
+        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+        themeToggle.setAttribute('data-tooltip', 'Switch to dark mode');
+        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('theme', theme);
+    
+    // Update meta theme-color for mobile browsers
+    updateMetaThemeColor(theme);
+}
+
+function updateMetaThemeColor(theme) {
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (!metaThemeColor) {
+        metaThemeColor = document.createElement('meta');
+        metaThemeColor.name = 'theme-color';
+        document.head.appendChild(metaThemeColor);
+    }
+    
+    metaThemeColor.content = theme === 'dark' ? '#0F172A' : '#FFFFFF';
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme, true);
+    
+    // Add haptic feedback for mobile devices
+    if (navigator.vibrate) {
+        navigator.vibrate(50);
+    }
+}
+
+function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'light';
 }
 
 // Add classes to elements for scroll animation
@@ -390,10 +495,18 @@ function setupEventListeners() {
         }
     });
     
+    // Theme toggle listener
+    themeToggle.addEventListener('click', toggleTheme);
+    
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeProjectModal();
+        }
+        // Keyboard shortcut for theme toggle (Ctrl/Cmd + Shift + D)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
+            e.preventDefault();
+            toggleTheme();
         }
     });
     

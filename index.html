@@ -1,198 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hola.. Its Vikas</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Theme Transition Overlay -->
+    <div class="theme-transition" id="themeTransition"></div>
+
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Your Name</a>
-            <div class="nav-links">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
+      <div class="nav-container">
+        <a href="#" class="nav-logo">Hola.. Its Vikas</a>
+        <div class="nav-links">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            data-tooltip="Switch to dark mode"
+          >
+            <svg class="theme-icon" id="themeIcon" viewBox="0 0 24 24">
+              <path
+                id="sunIcon"
+                d="M12 17.5c3.038 0 5.5-2.462 5.5-5.5S15.038 6.5 12 6.5 6.5 8.962 6.5 12s2.462 5.5 5.5 5.5zm0 1.5c-3.866 0-7-3.134-7-7s3.134-7 7-7 7 3.134 7 7-3.134 7-7 7zM12 0l1.414 1.414L12 2.828 10.586 1.414 12 0zm6.364 1.636L19.778 3.05l-1.414 1.414-1.414-1.414L18.364 1.636zM24 10.586l-1.414 1.414L21.172 12l1.414 1.414L24 12.586V10.586zM22.364 18.364l-1.414 1.414-1.414-1.414 1.414-1.414 1.414 1.414zM12 21.172l1.414 1.414L12 24l-1.414-1.414L12 21.172zM4.222 20.95l-1.414-1.414 1.414-1.414 1.414 1.414-1.414 1.414zM2.828 12L1.414 10.586 0 12l1.414 1.414L2.828 12zM1.636 4.222l1.414-1.414L4.464 4.222 3.05 5.636 1.636 4.222z"
+              />
+              <path
+                id="moonIcon"
+                d="M9 2c1.05.613 1.799 1.613 2.157 2.773C11.642 6.546 12.547 8.179 14.157 9.227 15.768 10.274 17.732 10.774 19.5 10.5c-.328 4.967-4.566 9-9.5 9-5.238 0-9.5-4.262-9.5-9.5S4.762 2 10 2z"
+                style="display: none"
+              />
+            </svg>
+          </button>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="hero-name animate-on-scroll">John Doe</span>
-                    <span class="hero-role animate-on-scroll">UI/UX Designer & Frontend Developer</span>
-                </h1>
-                <p class="hero-description animate-on-scroll">
-                    I create intuitive digital experiences through thoughtful design and clean code. 
-                    Specializing in user-centered design and modern web development.
-                </p>
-                <div class="hero-cta animate-on-scroll">
-                    <a href="#work" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-name animate-on-scroll">Vikas Jha</span>
+            <span class="hero-role animate-on-scroll"
+              >Devops, AI and QA Lead</span
+            >
+          </h1>
+          <p class="hero-description animate-on-scroll">
+            I create intuitive digital experiences through thoughtful design and
+            clean code. Specializing in user-centered design and modern web
+            development.
+          </p>
+          <div class="hero-cta animate-on-scroll">
+            <a href="#work" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Work Section -->
     <section id="work" class="work">
-        <div class="work-container">
-            <div class="work-header animate-on-scroll">
-                <h2 class="work-title">Selected Work</h2>
-                <p class="work-subtitle">A collection of projects showcasing design patterns and user experiences</p>
-            </div>
-
-            <!-- Filter Navigation -->
-            <div class="filter-nav animate-on-scroll">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ui-design">UI Design</button>
-                <button class="filter-btn" data-filter="ux-flow">UX Flow</button>
-                <button class="filter-btn" data-filter="prototype">Prototype</button>
-                <button class="filter-btn" data-filter="web-dev">Web Development</button>
-            </div>
-
-            <!-- Project Grid -->
-            <div class="project-grid" id="projectGrid">
-                <!-- Projects will be populated by JavaScript -->
-            </div>
+      <div class="work-container">
+        <div class="work-header animate-on-scroll">
+          <h2 class="work-title">Selected Work</h2>
+          <p class="work-subtitle">
+            A collection of projects showcasing design patterns and user
+            experiences
+          </p>
         </div>
+
+        <!-- Filter Navigation -->
+        <div class="filter-nav animate-on-scroll">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ui-design">UI Design</button>
+          <button class="filter-btn" data-filter="ux-flow">UX Flow</button>
+          <button class="filter-btn" data-filter="prototype">Prototype</button>
+          <button class="filter-btn" data-filter="web-dev">
+            Web Development
+          </button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid" id="projectGrid">
+          <!-- Projects will be populated by JavaScript -->
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="about-title">Design Philosophy</h2>
-                    <p class="about-description">
-                        I believe great design is invisible. It should feel natural, solve real problems, 
-                        and create meaningful connections between users and products. My approach combines 
-                        user research, iterative design, and technical implementation.
-                    </p>
-                    
-                    <div class="process">
-                        <h3 class="process-title">My Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">01</div>
-                                <div class="step-content">
-                                    <h4>Research & Discovery</h4>
-                                    <p>Understanding user needs and business goals</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">02</div>
-                                <div class="step-content">
-                                    <h4>Ideation & Wireframing</h4>
-                                    <p>Exploring solutions and information architecture</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">03</div>
-                                <div class="step-content">
-                                    <h4>Design & Prototype</h4>
-                                    <p>Creating high-fidelity designs and interactions</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">04</div>
-                                <div class="step-content">
-                                    <h4>Test & Iterate</h4>
-                                    <p>Validating solutions and refining the experience</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="about-title">Design Philosophy</h2>
+            <p class="about-description">
+              I believe great design is invisible. It should feel natural, solve
+              real problems, and create meaningful connections between users and
+              products. My approach combines user research, iterative design,
+              and technical implementation.
+            </p>
+
+            <div class="process">
+              <h3 class="process-title">My Process</h3>
+              <div class="process-steps">
+                <div class="process-step">
+                  <div class="step-number">01</div>
+                  <div class="step-content">
+                    <h4>Research & Discovery</h4>
+                    <p>Understanding user needs and business goals</p>
+                  </div>
                 </div>
-                
-                <div class="skills">
-                    <h3 class="skills-title">Skills & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Design</h4>
-                            <ul>
-                                <li>Figma</li>
-                                <li>Adobe Creative Suite</li>
-                                <li>Sketch</li>
-                                <li>Principle</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Development</h4>
-                            <ul>
-                                <li>HTML/CSS/JavaScript</li>
-                                <li>React</li>
-                                <li>Node.js</li>
-                                <li>Git</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Research</h4>
-                            <ul>
-                                <li>User Interviews</li>
-                                <li>Usability Testing</li>
-                                <li>Analytics</li>
-                                <li>A/B Testing</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="process-step">
+                  <div class="step-number">02</div>
+                  <div class="step-content">
+                    <h4>Ideation & Wireframing</h4>
+                    <p>Exploring solutions and information architecture</p>
+                  </div>
                 </div>
+                <div class="process-step">
+                  <div class="step-number">03</div>
+                  <div class="step-content">
+                    <h4>Design & Prototype</h4>
+                    <p>Creating high-fidelity designs and interactions</p>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-number">04</div>
+                  <div class="step-content">
+                    <h4>Test & Iterate</h4>
+                    <p>Validating solutions and refining the experience</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div class="skills">
+            <h3 class="skills-title">Skills & Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Design</h4>
+                <ul>
+                  <li>Figma</li>
+                  <li>Adobe Creative Suite</li>
+                  <li>Sketch</li>
+                  <li>Principle</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h4>Development</h4>
+                <ul>
+                  <li>HTML/CSS/JavaScript</li>
+                  <li>React</li>
+                  <li>Node.js</li>
+                  <li>Git</li>
+                </ul>
+              </div>
+              <div class="skill-category">
+                <h4>Research</h4>
+                <ul>
+                  <li>User Interviews</li>
+                  <li>Usability Testing</li>
+                  <li>Analytics</li>
+                  <li>A/B Testing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-content">
-                <h2 class="contact-title">Let's Work Together</h2>
-                <p class="contact-description">
-                    I'm always interested in new opportunities and collaborations. 
-                    Let's discuss how we can bring your ideas to life.
-                </p>
-                <div class="contact-info">
-                    <a href="mailto:hello@yourname.com" class="contact-link">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">hello@yourname.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/yourname" class="contact-link" target="_blank">
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">linkedin.com/in/yourname</span>
-                    </a>
-                    <a href="https://dribbble.com/yourname" class="contact-link" target="_blank">
-                        <span class="contact-label">Dribbble</span>
-                        <span class="contact-value">dribbble.com/yourname</span>
-                    </a>
-                </div>
-            </div>
+      <div class="contact-container">
+        <div class="contact-content">
+          <h2 class="contact-title">Let's Work Together</h2>
+          <p class="contact-description">
+            I'm always interested in new opportunities and collaborations. Let's
+            discuss how we can bring your ideas to life.
+          </p>
+          <div class="contact-info">
+            <a href="mailto:hello@yourname.com" class="contact-link">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">hello@yourname.com</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/yourname"
+              class="contact-link"
+              target="_blank"
+            >
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/yourname</span>
+            </a>
+            <a
+              href="https://dribbble.com/yourname"
+              class="contact-link"
+              target="_blank"
+            >
+              <span class="contact-label">Dribbble</span>
+              <span class="contact-value">dribbble.com/yourname</span>
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-text">© 2025 Your Name. All rights reserved.</p>
-        </div>
+      <div class="footer-container">
+        <p class="footer-text">© 2025 Vikas Jha. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Project Modal -->
     <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-body" id="modalBody">
-                <!-- Modal content will be populated by JavaScript -->
-            </div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-body" id="modalBody">
+          <!-- Modal content will be populated by JavaScript -->
         </div>
+      </div>
     </div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
